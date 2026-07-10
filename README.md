@@ -1,4 +1,4 @@
-# byBias Icons for Cinnamon — README
+# byBias Icons for Cinnamon
 
 *A complete toolkit for managing a personal icon collection on Linux Mint / Cinnamon.*
 *by Franz & Aldus 🦉 — July 2026*
