@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Change icon (byBias)...
+Comment=Pick an icon from the byBias collection and apply it
+Exec=python3 /home/franz/.local/bin/pick-icon-bybias.py %F
+Icon-Name=preferences-desktop-icons
+Selection=s
+Extensions=any;
+Quote=double
