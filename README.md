@@ -1,145 +1,64 @@
-# byBias Icons for Cinnamon
+# 🎨 Own Icon Theme in Cinnamon — superseded
 
-*A complete toolkit for managing a personal icon collection on Linux Mint / Cinnamon.*
-*by Franz & Aldus 🦉 — July 2026*
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Made with love](https://img.shields.io/badge/made%20with-%E2%9D%A4%EF%B8%8F%20by%20Francesco-blueviolet)
+![Status](https://img.shields.io/badge/status-superseded-lightgrey)
+[![Successor](https://img.shields.io/badge/successor-byBias--Icons--Paket-blueviolet)](https://github.com/FranzBias/byBias-Icons-Paket)
 
----
+**🌍 Languages:**
+[English](#english) ·
+[Italiano](#italiano) ·
+[Deutsch](#deutsch) ·
+[Español](#espanol) ·
+[Français](#francais) ·
+[Nederlands](#nederlands) ·
+[Русский](#russkij) ·
+[العربية](#arabic) ·
+[中文](#chinese) ·
+[日本語](#japanese)
 
-## What's in the suite
-
-| File | What it does |
-|---|---|
-| `create-icon-theme.sh` | Adds icons to a theme (or creates one): copies, cleans up the names (spaces and accents), generates `index.theme`, updates the cache, restarts Cinnamon and Nemo. Zenity graphical windows. |
-| `pick-icon-bybias.py` | Custom chooser: shows the collection in **your** categories and applies the chosen icon to files and folders. |
-| `change-icon-bybias.nemo_action` | Adds **"Change icon (byBias)..."** to Nemo's right-click menu. |
-| `make-symbolic-icon.py` | Generates symbolic SVG icons (16×16, monochrome) from your PNGs. |
-| `hunt-the-giants.py` | Finds and defuses "giant icons" (name collisions with system icons). Evicts nested complete themes. |
-| `prefix-everything.sh` | Prefixes **all** icons in the theme with `bybias-`: zero automatic substitutions, zero triangles. The choice if you just want your collection to pick from by hand. |
-| `FAQ-icon-theme-Cinnamon.md` | All the theory and every possible problem, personally battle-tested. |
-
----
-
-## Installation
-
-### The theme script and utilities
-
-Put the scripts wherever you like — a handy path is `~/.local/bin/`:
-
-```bash
-mkdir -p ~/.local/bin
-cp create-icon-theme.sh make-symbolic-icon.py hunt-the-giants.py prefix-everything.sh ~/.local/bin/
-chmod +x ~/.local/bin/create-icon-theme.sh ~/.local/bin/*.py ~/.local/bin/prefix-everything.sh
-```
-
-### Chooser + Nemo right-click
-
-```bash
-cp pick-icon-bybias.py ~/.local/bin/
-chmod +x ~/.local/bin/pick-icon-bybias.py
-mkdir -p ~/.local/share/nemo/actions
-cp change-icon-bybias.nemo_action ~/.local/share/nemo/actions/
-nemo -q    # restart Nemo so it discovers the action
-```
-
-The theme path is defined at the top of `pick-icon-bybias.py` and
-`hunt-the-giants.py` (`THEME = ...` / `THEME_DEFAULT = ...`): if the theme
-changes name or home, update it there. In the `.nemo_action`, the `Exec=` line
-must point to the real path of the script.
+> 👉 **New home: [byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)** — one GTK app instead of six scripts.
+>
+> 📜 The old instructions for the scripts are in [README-legacy.md](README-legacy.md).
 
 ---
 
-## Daily use
+<a id="english"></a>
+## 🇬🇧 English
+This collection of scripts has grown up: everything it did — building your own icon theme, the chooser with your categories, symbolic icons, the hunt for "giant icons" — now lives in **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, a single GTK app. Only the Nemo right-click action (`change-icon-bybias.nemo_action`) has no twin there yet: you can still take it from here. This repository stays online, read-only, for history; the `FAQ-icon-theme-Cinnamon.md` is still a good read.
 
-### Adding icons to the theme
+<a id="italiano"></a>
+## 🇮🇹 Italiano
+Questa raccolta di script è cresciuta: tutto quello che faceva — creare il proprio tema di icone, il selettore con le tue categorie, le icone simboliche, la caccia alle «icone giganti» — ora vive in **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, un'unica app GTK. Solo l'azione di Nemo col tasto destro (`change-icon-bybias.nemo_action`) lì non c'è ancora: puoi prenderla da qui. Il repository resta online in sola lettura, come memoria; la FAQ resta una buona lettura.
 
-```bash
-bash create-icon-theme.sh
-```
+<a id="deutsch"></a>
+## 🇩🇪 Deutsch
+Diese Skriptsammlung ist erwachsen geworden: Alles, was sie konnte — eigenes Icon-Theme bauen, Auswahl nach eigenen Kategorien, symbolische Icons, die Jagd auf „Riesen-Icons" — steckt jetzt in **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, einer einzigen GTK-App. Nur die Nemo-Rechtsklick-Aktion (`change-icon-bybias.nemo_action`) gibt es dort noch nicht: Die bekommst du weiterhin hier. Dieses Repository bleibt schreibgeschützt online, als Archiv.
 
-Asks, in order: **where** to take the new icons from → **which theme** to add
-them to → permission to rename **spaces** and **accents** → which theme to
-**inherit** from → whether to **activate** and **restart**. Then it does
-everything on its own. Rerun it after every change. Tip: if you pick the theme
-itself as the *source*, it skips the copy and only regenerates (handy after a
-manual reorganisation).
+<a id="espanol"></a>
+## 🇪🇸 Español
+Esta colección de scripts ha crecido: casi todo lo que hacía vive ahora en **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, una sola app GTK. Este repositorio queda en línea, de solo lectura, como archivo.
 
-### Changing a folder's or file's icon
+<a id="francais"></a>
+## 🇫🇷 Français
+Cette collection de scripts a grandi : presque tout ce qu'elle faisait vit désormais dans **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, une seule application GTK. Ce dépôt reste en ligne, en lecture seule, comme archive.
 
-Right-click → **Change icon (byBias)...** → the chooser opens with your
-categories → double-click → done. From the terminal:
+<a id="nederlands"></a>
+## 🇳🇱 Nederlands
+Deze verzameling scripts is volwassen geworden: bijna alles wat ze deed, zit nu in **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)**, één GTK-app. Deze repository blijft alleen-lezen online, als archief.
 
-```bash
-python3 ~/.local/bin/pick-icon-bybias.py ~/Documents/Invoices   # apply
-python3 ~/.local/bin/pick-icon-bybias.py                        # copy the path
-gio set -t unset ~/Documents/Invoices metadata::custom-icon     # restore
-```
+<a id="russkij"></a>
+## 🇷🇺 Русский
+Этот набор скриптов вырос: почти всё, что он умел, теперь живёт в **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)** — едином GTK-приложении. Репозиторий остаётся в сети только для чтения, как архив.
 
-### Creating symbolic icons
+<a id="arabic"></a>
+## 🇸🇦 العربية
+<div dir="rtl">كبرت مجموعة السكربتات هذه: معظم ما كانت تفعله أصبح الآن في <b><a href="https://github.com/FranzBias/byBias-Icons-Paket">byBias-Icons-Paket</a></b>، تطبيق GTK واحد. يبقى هذا المستودع متاحًا للقراءة فقط كأرشيف.</div>
 
-```bash
-python3 ~/.local/bin/make-symbolic-icon.py Trash-*.png --out ~/theme/symbolic/ --preview
-```
+<a id="chinese"></a>
+## 🇨🇳 中文
+这组脚本已经“长大”：它的几乎全部功能现在都在 **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)** 这个独立的 GTK 应用中。本仓库以只读方式保留，作为存档。
 
-See `README-symbolic-icon.md` for options and how to put them into service.
-
-### Defeating giant icons
-
-```bash
-python3 ~/.local/bin/hunt-the-giants.py            # report (touches nothing)
-python3 ~/.local/bin/hunt-the-giants.py --evict    # move nested complete themes out
-python3 ~/.local/bin/hunt-the-giants.py --rename   # defuse the remaining collisions
-python3 ~/.local/bin/hunt-the-giants.py --restore  # undo a --rename
-```
-
-**Recommended order:** report → `--evict` → report → `--rename`. Eviction must
-come **first**, otherwise the rename hits tens of thousands of files from the
-nested themes (the "avalanche"). To keep an intentional substitution (your own
-`user-trash`), write the name — without extension, one per line — in
-`giants-allowed.txt` in the theme folder.
-
-### Zero substitutions: just my collection (no triangles)
-
-If you **don't** want the theme to substitute any system icon — just your
-collection to pick from by hand in the chooser — the cleanest route is to
-prefix **everything**:
-
-```bash
-bash prefix-everything.sh    # adds 'bybias-' to every icon, asks for confirmation
-nemo -q
-```
-
-No name can collide with a system one anymore, so both the giants and the
-**triangles** (missing icons, see FAQ) disappear. It's repeatable: it skips
-already-prefixed icons, so you can run it after each addition. Categories and
-folders don't change: only file names are touched.
-
----
-
-## The lean-theme philosophy 🦉
-
-A theme in `~/.local/share/icons/` works best **lean**: only the collections
-you actually use to assign icons. The full archive — downloaded themes,
-experiments, thousands of "maybe someday" files — is better off elsewhere
-(e.g. `~/Pictures/`).
-
-Two concrete reasons:
-
-- **complete themes** nested inside (with icons using standard names like
-  `folder` or `edit-copy`) get picked by the system in place of the stock
-  icons: alien colours and **giant icons** in menus;
-- fewer files = a healthier cache, faster indexing, fewer surprises.
-
-Your own experiments with complete themes deserve promotion to standalone
-themes: moved into `~/.local/share/icons/`, they become selectable from
-Settings.
-
----
-
-## The liturgy (commit it to memory)
-
-```
-edit → regenerate index.theme → gtk-update-icon-cache -f <path> → Ctrl+Alt+Esc → nemo -q
-```
-
-The scripts run it for you, but knowing it by heart saves late nights.
-For any problem: the **FAQ**, where every trap is documented with its scar.
+<a id="japanese"></a>
+## 🇯🇵 日本語
+このスクリプト集は成長しました。その機能のほぼすべては、ひとつの GTK アプリ **[byBias-Icons-Paket](https://github.com/FranzBias/byBias-Icons-Paket)** に引き継がれています。このリポジトリはアーカイブとして読み取り専用で残ります。
